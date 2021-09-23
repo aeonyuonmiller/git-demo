@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Force Recordings</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/svg+xml" href="files/favicon.svg">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="demo.html" class="active">Demo</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    
+    <div class="logo"><img src="files/favicon.svg" alt=""></div>
+
+    <h1>Demo</h1>
+
+    <div class="content">
+        <form action="thankyou.html" class="row"> <!--  method="post" enctype="multipart/form-data"  -->
+
+            <label for="artistname">Artistname:</label>
+            <input placeholder="Your Artistname" type="text" name="artistname">
+
+            <label for="artistname">EP Title:</label>
+            <input id="artistname" placeholder="EP Title" type="text">
+
+            <!-- Checkboxes (add "checked" to tag to pre-check) -->
+            <h5 class="center">Preferred form?</h5>
+            <div class="flex middle span2">
+                <div class="center">
+                    <input class="hide-element" type="checkbox" name="digital" id="digital" value="digital" tabindex="0">
+                    <label for="digital" class="center">
+                        <svg viewBox="0 0 100 100">
+                            <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
+                            <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
+                        </svg>
+                        Digital
+                    </label>
+                </div>
+
+                <input type="checkbox" name="vinyl" id="vinyl" value="vinyl" tabindex="0">
+                <label for="vinyl" class="center">
+                    <svg viewBox="0 0 100 100">
+                        <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
+                        <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
+                    </svg>
+                    <span>Vinyl</span>
+                </label>
+            </div>
+
+            <!-- Radio "Soon" -->
+            <h5 class="center">Preferred time?</h5>
+            <div class="flex middle span2">
+                <div class="center">
+                    <input class="hide-element" type="radio" name="group" id="asap" value="asap">
+                    <label for="asap" class="center">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45.5" class="box"/>
+                            <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
+                        </svg>
+                        <span>Soon</span>
+                    </label>
+                </div>
+
+            <!-- Radio "No Rush" -->
+            <input type="radio" name="group" id="no-rush" value="no-rush">
+                <label for="no-rush" class="center">
+                    <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45.5" class="box"/>
+                    <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
+                    </svg>
+                    <span>No rush</span>
+                </label>
+            </div>
+
+            <!-- Select -->
+            <div class="push full-span">
+                <label for="genre">Genre:</label>
+                <select name="genre" id="genre">
+                    <option value="Choose genre" disabled>Choose genre</option>
+                    <option value="acid">Acid</option>
+                    <option value="techno">Techno</option>
+                    <option value="industrial">Industrial</option>
+                    <option value="experimental">Experimental</option>
+                </select>
+            </div>
+
+            <!-- Email -->
+            <div class="full-span">
+                <label for="email">Email:</label>
+                <input placeholder="Your Email" type="email" id="email">
+            </div>
+
+            <!-- Upload -->
+            <div class="upload full-span">
+                <label for="file" class="mb">Choose a file <span class="box__dragndrop">or drag it here</span></label>
+                <div class="box__input">
+                    <input id="file" class="box__file" type="file" name="files[]" data-multiple-caption="{count} files selected" multiple />
+                    <!-- button class="box__button" type="submit">Upload</!-->
+                </div>
+                <div class="box__uploading"><h5>Uploading…</h5></div>
+                <div class="box__success"><h5>Done!</h5></div>
+                <div class="box__error"><h5>Error!</h5><span></span>.</div>
+            </div>   
+
+            <button class="primary">Send</button>
+        </form>
+    </div>
+
+    <footer>
+        <span>&copy;</span> 2021
+    </footer>
+</body>
+</html>

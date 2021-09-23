@@ -1,0 +1,593 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+::selection {
+  color: var(--dark);
+  background: var(--primary);
+}
+::-moz-selection {
+  color: var(--dark);
+  background: var(--primary);
+}
+
+:root {
+  --bg: hsl(0, 0%, 95%);
+  --dark: hsl(0, 0%, 20%);
+  --medium: hsl(0, 0%, 50%);
+  --grey: hsl(0, 0%, 82%);
+  --field: hsl(0, 0%, 77%);
+  --light: hsl(0, 0%, 100%);
+  --primary: hsl(70, 100%, 60%);
+  --secondary: #006d75;
+}
+
+.primary {
+  background: var(--dark);
+  border: 1px solid var(--dark);
+  padding: 1em 2em;
+  color: var(--light);
+}
+
+/* flexbox normal row */
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* flexbox column */
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* flex-center / xy */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.push {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+
+.middle {
+  margin: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+}
+
+.mb {
+  margin: 6px 0;
+}
+
+.hide-element {
+  border: 0;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hide-element-focusable:active,
+.hide-element-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  color: var(--dark);
+  background-color: var(--bg);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+#back-button {
+  position: relative;
+  top: 3em;
+  padding: 1.5em;
+  border-radius: 50px;
+  border: 0.15em solid var(--medium);
+}
+
+.logo {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  right: 30px;
+  top: 22px;
+  pointer-events: none;
+}
+
+h1 {
+  position: fixed;
+  bottom: 25px;
+  left: 40px;
+  font-size: 16vw;
+  letter-spacing: -0.085em;
+  line-height: 16vw;
+  color: var(--dark);
+  pointer-events: none;
+}
+
+h3 {
+  margin-top: 1em;
+  margin-bottom: 0.25em;
+}
+
+h5 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 1em 0 1em 0;
+}
+
+p {
+  color: var(--medium);
+  font-size: 22px;
+  line-height: 1.2em;
+  letter-spacing: -0.4px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+p span {
+  position: relative;
+  font-size: 10px;
+  letter-spacing: 1px;
+  bottom: 8px;
+  margin: 0 2px;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  color: var(--dark);
+  top: 16px;
+}
+
+a.underline:before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+a.underline:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+a.underline:before {
+  content: " ";
+  margin-top: 1.5em;
+  display: block;
+  position: absolute;
+  height: 2px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background-color: var(--grey);
+  z-index: -1;
+  transition: transform 0.4s ease;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  left: auto;
+  width: 500px;
+}
+
+.content img,
+.content iframe {
+  margin-bottom: 2.5em;
+}
+
+.content p,
+.content a {
+  margin: 0 20px;
+}
+
+/* FORM Styling */
+form {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-width: 320px;
+  right: 20px;
+}
+
+input {
+  width: 100%;
+}
+
+label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+label.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+input[type="email"],
+input[type="text"] {
+  padding: 20px 20px;
+  margin: 8px 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background: var(--field);
+  border: 0;
+  border-bottom: 2px solid var(--field);
+  transition: all ease 0.3s;
+  grid-column: span 3;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.full-span {
+  grid-column: span 3;
+}
+
+input[type="email"]:hover,
+input[type="text"]:hover {
+  background: hsl(0, 0%, 77%);
+  border-bottom: 2px solid var(--medium);
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus {
+  background: hsl(0, 0%, 80%);
+  border-bottom: 2px solid var(--medium);
+  outline: none !important;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 3em;
+}
+
+/* CHECKBOX */
+input[type="checkbox"] {
+  opacity: 0.001;
+  width: 1px;
+}
+
+input[type="checkbox"] + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="checkbox"] + label > svg {
+  width: 3em;
+  stroke: var(--medium);
+  stroke-width: 6;
+  fill: white;
+}
+
+/* TAB feedback */
+input[type="checkbox"]:focus + label svg .box {
+  stroke: var(--medium);
+}
+
+input[type="checkbox"] + label svg .box {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 0;
+  stroke: var(--grey);
+  fill: white;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+input[type="checkbox"] + label svg .check {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  fill: none;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+input[type="checkbox"] + label > span {
+  padding-top: 0.3em;
+  margin-left: 0.3em;
+}
+
+input[type="checkbox"]:checked + label .box {
+  stroke-dashoffset: 320;
+}
+
+input[type="checkbox"]:checked + label .check {
+  stroke-dashoffset: 0;
+}
+
+/* RADIO */
+input[type="radio"] {
+  opacity: 0.001;
+  width: 1px;
+}
+
+input[type="radio"] + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="radio"] + label > svg {
+  width: 3em;
+  stroke: var(--medium);
+  stroke-width: 6;
+  fill: white;
+}
+
+input[type="radio"] + label svg .box {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 0;
+  stroke: var(--grey);
+  fill: white;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+/* TAB feedback */
+input[type="radio"]:focus + label svg .box,
+input[type="radio"]:hover + label svg .box {
+  stroke: var(--medium);
+}
+
+input[type="radio"] + label svg .check {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  fill: none;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+input[type="radio"] + label > span {
+  padding-top: 0.3em;
+  margin-left: 0.3em;
+}
+
+input[type="radio"]:checked + label .box {
+  stroke-dashoffset: 320;
+}
+
+input[type="radio"]:checked + label .check {
+  stroke-dashoffset: 0;
+}
+
+select {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+
+  background-color: var(--field);
+  width: 80%;
+  height: 55px;
+  font-size: 16px;
+  padding: 1em;
+  font-family: inherit;
+  font-weight: 500;
+  color: #fff;
+  float: right;
+  border-radius: 0;
+  border: 0;
+
+  background-image: url(../files/select-arrow.svg);
+  /* x-axis / offset-x / y-axis / offset-y */
+  background-position: right 16px top 21px;
+  background-repeat: no-repeat;
+  transition: all ease 0.2s;
+}
+
+select:hover {
+  background: var(--medium);
+  background-image: url(../files/select-arrow.svg);
+  /* x-axis / offset-x / y-axis / offset-y */
+  background-position: right 16px top 23px;
+  background-repeat: no-repeat;
+}
+
+.upload {
+  margin-bottom: 1em;
+}
+
+.box__input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px dashed var(--grey);
+  height: 80px;
+  border-radius: 1em;
+}
+
+.box__file {
+  width: 200px;
+}
+
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+
+button {
+  padding: 1em;
+  background: none;
+  border: 2px solid var(--dark);
+  color: var(--dark);
+  justify-self: start;
+}
+
+nav {
+  position: fixed;
+  padding: 0.8em 1em;
+}
+
+nav > a {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--medium);
+  margin-left: 16px;
+}
+
+nav > a:hover {
+  opacity: 0.7;
+}
+
+nav > a::after {
+  --tap-increment: -16px;
+  content: "";
+  position: absolute;
+  top: var(--tap-increment);
+  left: var(--tap-increment);
+  right: var(--tap-increment);
+  bottom: var(--tap-increment);
+}
+
+nav > a.active {
+  color: #ccc;
+  pointer-events: none;
+}
+
+button.play {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  color: var(--light);
+  border-radius: 50%;
+  background: var(--dark);
+  box-shadow: 0 10px 30px var(--grey), 0 -10px 15px #fff;
+  padding: 0.5em;
+}
+
+button.play::after {
+  content: "";
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  background-image: url(../files/play.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  transition: all ease 0.4s;
+}
+
+button.play:hover::after {
+  transform: translateX(2px);
+}
+
+table {
+  position: absolute;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.01em;
+  color: #ccc;
+  background: var(--light);
+  padding: 1em 20px;
+  text-align: left;
+}
+
+tr,
+td {
+  border: 1px solid var(--grey);
+  border-right: none;
+  padding: 1em 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 18px;
+  right: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: -0.1px;
+  padding: 2em;
+  color: hsl(0, 0%, 80%);
+}
+
+footer span {
+  position: relative;
+  font-size: 14px;
+  top: 1px;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    width: 90%;
+  }
+}
